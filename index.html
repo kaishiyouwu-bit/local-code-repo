@@ -117,6 +117,118 @@
             </aside>
           </section>
 
+          <section class="feature-suite" aria-label="前台功能能力">
+            <div class="section-title">
+              <h2>前台功能能力</h2>
+              <span>本地版先做完整入口，后续接入真实 SaaS 服务</span>
+            </div>
+            <div class="feature-grid">
+              <article class="feature-card">
+                <span class="feature-icon">01</span>
+                <h3>多租户工作台</h3>
+                <p>按公司/团队隔离数据，用户、素材、作品、任务和积分都归属租户。</p>
+              </article>
+              <article class="feature-card">
+                <span class="feature-icon">02</span>
+                <h3>会员套餐与席位</h3>
+                <p>白金、黑金、企业版套餐入口，管理员可查看到期时间和席位使用情况。</p>
+              </article>
+              <article class="feature-card">
+                <span class="feature-icon">03</span>
+                <h3>共享积分池</h3>
+                <p>租户层积分余额、冻结积分、消耗记录、失败退款记录集中展示。</p>
+              </article>
+              <article class="feature-card">
+                <span class="feature-icon">04</span>
+                <h3>素材库复用</h3>
+                <p>房间图、产品图、参考图、Logo、视频素材统一沉淀，创建任务时复用。</p>
+              </article>
+              <article class="feature-card">
+                <span class="feature-icon">05</span>
+                <h3>任务记录</h3>
+                <p>排队中、生成中、高清化中、失败、退款、取消等状态都可追踪。</p>
+              </article>
+              <article class="feature-card">
+                <span class="feature-icon">06</span>
+                <h3>作品导出</h3>
+                <p>支持直接导出和高清后导出，预留 1080P、2K、4K 多版本记录。</p>
+              </article>
+              <article class="feature-card">
+                <span class="feature-icon">07</span>
+                <h3>成员与角色</h3>
+                <p>管理员、创作者、查看者三类角色入口，权限逻辑按正式版预留。</p>
+              </article>
+              <article class="feature-card">
+                <span class="feature-icon">08</span>
+                <h3>异常处理</h3>
+                <p>上传失败、积分不足、API 失败、生成超时、退款失败均预留提示位。</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="operations-panel">
+            <div class="section-title">
+              <h2>租户账户</h2>
+              <span>会员、积分、成员和最近流水</span>
+            </div>
+            <div class="ops-grid">
+              <article class="ops-card membership">
+                <p>当前套餐</p>
+                <h3>黑金会员</h3>
+                <span>5 个席位 · 2026-12-31 到期</span>
+                <button>续费 / 升级</button>
+              </article>
+              <article class="ops-card credits">
+                <p>积分账户</p>
+                <h3>4,960</h3>
+                <span>冻结 46 · 今日消耗 420</span>
+                <button>查看明细</button>
+              </article>
+              <article class="ops-card members">
+                <p>成员席位</p>
+                <h3>3 / 5</h3>
+                <span>管理员 1 · 创作者 2 · 查看者 0</span>
+                <button>管理成员</button>
+              </article>
+            </div>
+            <div class="mini-table-wrap">
+              <table class="mini-table">
+                <thead>
+                  <tr>
+                    <th>时间</th>
+                    <th>类型</th>
+                    <th>操作人</th>
+                    <th>积分</th>
+                    <th>状态</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>13:20</td>
+                    <td>视频生成</td>
+                    <td>张设计师</td>
+                    <td>-46</td>
+                    <td><mark>已确认</mark></td>
+                  </tr>
+                  <tr>
+                    <td>12:48</td>
+                    <td>高清化导出</td>
+                    <td>李运营</td>
+                    <td>-30</td>
+                    <td><mark>已确认</mark></td>
+                  </tr>
+                  <tr>
+                    <td>11:15</td>
+                    <td>生成失败退款</td>
+                    <td>张设计师</td>
+                    <td>+40</td>
+                    <td><mark>已退款</mark></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
           <section class="builder-panel" id="builder">
             <div class="steps">
               <span class="step active">1 上传素材</span>
@@ -280,6 +392,116 @@
                 </tr>
               </tbody>
             </table>
+
+            <section class="admin-modules" aria-label="后台配置能力">
+              <div class="admin-module-head">
+                <h2>后台能力总览</h2>
+                <p>所有价格、提示词、供应商、插件和套餐都走后台配置，不写死在代码里。</p>
+              </div>
+              <div class="module-grid">
+                <article class="module-card">
+                  <h3>租户管理</h3>
+                  <p>新增租户、禁用租户、绑定套餐、查看用户/作品/流水、手动调积分。</p>
+                  <span>tenants</span>
+                </article>
+                <article class="module-card">
+                  <h3>用户管理</h3>
+                  <p>用户创建、角色调整、状态禁用、最近登录、重置密码。</p>
+                  <span>users / roles</span>
+                </article>
+                <article class="module-card">
+                  <h3>会员套餐</h3>
+                  <p>首购价、续费价、赠送积分、席位数、可用任务和权益配置。</p>
+                  <span>membership_plans</span>
+                </article>
+                <article class="module-card">
+                  <h3>积分流水</h3>
+                  <p>预扣、确认、退款、充值、会员赠送、后台调整都留痕。</p>
+                  <span>credit_transactions</span>
+                </article>
+                <article class="module-card">
+                  <h3>视频价格</h3>
+                  <p>按任务类型、输入类型、比例、时长、质量配置消耗积分。</p>
+                  <span>pricing_rules</span>
+                </article>
+                <article class="module-card">
+                  <h3>提示词系统</h3>
+                  <p>任务、空间、风格、运镜、全局规则、负面提示词和版本回滚。</p>
+                  <span>prompt_*</span>
+                </article>
+                <article class="module-card">
+                  <h3>模型供应商</h3>
+                  <p>视频生成 API 地址、模型名称、超时、重试次数、支持任务类型。</p>
+                  <span>model_providers</span>
+                </article>
+                <article class="module-card">
+                  <h3>高清化插件</h3>
+                  <p>1080P、2K、4K 高清导出插件、价格、超时和失败退款开关。</p>
+                  <span>upscale_plugins</span>
+                </article>
+                <article class="module-card">
+                  <h3>系统设置</h3>
+                  <p>平台名称、Logo、水印、上传限制、注册开关、邀请成员开关。</p>
+                  <span>system_settings</span>
+                </article>
+              </div>
+
+              <div class="config-split">
+                <div class="config-panel">
+                  <h3>价格配置示例</h3>
+                  <table class="mini-table">
+                    <thead>
+                      <tr>
+                        <th>任务类型</th>
+                        <th>输入</th>
+                        <th>规格</th>
+                        <th>积分</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>房间改造</td>
+                        <td>图片</td>
+                        <td>9:16 · 5秒</td>
+                        <td>20</td>
+                      </tr>
+                      <tr>
+                        <td>产品植入</td>
+                        <td>图片</td>
+                        <td>9:16 · 8秒</td>
+                        <td>40</td>
+                      </tr>
+                      <tr>
+                        <td>样板房视频</td>
+                        <td>视频</td>
+                        <td>9:16 · 8秒</td>
+                        <td>60</td>
+                      </tr>
+                      <tr>
+                        <td>高清导出</td>
+                        <td>插件</td>
+                        <td>1080P</td>
+                        <td>30</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="config-panel prompt-preview">
+                  <h3>提示词拼接顺序</h3>
+                  <ol>
+                    <li>任务类型底层提示词</li>
+                    <li>用户上传素材说明</li>
+                    <li>空间类型提示词</li>
+                    <li>装修风格提示词</li>
+                    <li>运镜风格提示词</li>
+                    <li>输出规格</li>
+                    <li>全局质量规则</li>
+                    <li>负面提示词</li>
+                    <li>用户备注</li>
+                  </ol>
+                </div>
+              </div>
+            </section>
           </div>
         </section>
       </main>

@@ -359,6 +359,8 @@ h1 {
 .work-card,
 .status-panel,
 .builder-panel,
+.feature-suite,
+.operations-panel,
 .admin-main {
   border-radius: 22px;
   background: var(--panel);
@@ -421,6 +423,134 @@ h1 {
 
 .status-panel {
   padding: 22px;
+}
+
+.feature-suite,
+.operations-panel {
+  margin-top: 28px;
+  padding: 24px;
+}
+
+.feature-suite .section-title,
+.operations-panel .section-title {
+  margin: 0 0 18px;
+}
+
+.section-title span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.feature-card {
+  border: 1px solid rgba(230, 223, 216, 0.86);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 18px;
+}
+
+.feature-icon {
+  display: inline-grid;
+  width: 38px;
+  height: 28px;
+  place-items: center;
+  border-radius: 999px;
+  color: #875f36;
+  background: #f4dfc8;
+  font-size: 12px;
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+.feature-card h3,
+.ops-card h3,
+.module-card h3,
+.config-panel h3 {
+  margin: 0;
+}
+
+.feature-card p,
+.module-card p {
+  color: var(--muted);
+  line-height: 1.55;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.ops-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.ops-card {
+  min-height: 156px;
+  border-radius: 18px;
+  padding: 20px;
+  color: #172536;
+  display: grid;
+  align-content: space-between;
+}
+
+.ops-card p,
+.ops-card span {
+  color: rgba(23, 37, 54, 0.68);
+}
+
+.ops-card h3 {
+  font-size: 30px;
+}
+
+.ops-card button {
+  justify-self: start;
+  border-radius: 12px;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.76);
+  color: #172536;
+  font-weight: 800;
+}
+
+.membership {
+  background: linear-gradient(135deg, #f3ddc4, #fff8ee);
+}
+
+.credits {
+  background: linear-gradient(135deg, #deecd2, #f9fff4);
+}
+
+.members {
+  background: linear-gradient(135deg, #dbeafe, #f8fbff);
+}
+
+.mini-table-wrap {
+  overflow-x: auto;
+}
+
+.mini-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.mini-table th,
+.mini-table td {
+  padding: 13px 14px;
+  border-bottom: 1px solid #eef0ef;
+  text-align: left;
+  font-size: 14px;
+}
+
+.mini-table th {
+  background: #f6f6f3;
+  color: #5b6670;
 }
 
 .metric {
@@ -725,6 +855,68 @@ mark {
   background: linear-gradient(135deg, #5f342b, #d7b792);
 }
 
+.admin-modules {
+  margin-top: 28px;
+}
+
+.admin-module-head {
+  margin-bottom: 18px;
+}
+
+.admin-module-head p {
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.module-card {
+  border: 1px solid #edf0ee;
+  border-radius: 16px;
+  background: #fff;
+  padding: 18px;
+}
+
+.module-card span {
+  display: inline-block;
+  margin-top: 12px;
+  border-radius: 999px;
+  background: #eef4f0;
+  color: #466052;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.config-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.config-panel {
+  border: 1px solid #edf0ee;
+  border-radius: 18px;
+  background: #fff;
+  padding: 20px;
+}
+
+.config-panel .mini-table {
+  margin-top: 14px;
+}
+
+.prompt-preview ol {
+  margin: 14px 0 0;
+  padding-left: 22px;
+  color: #52606c;
+  line-height: 1.9;
+}
+
 .mobile-nav {
   display: none;
 }
@@ -757,6 +949,16 @@ mark {
 
   .works-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .feature-grid,
+  .module-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ops-grid,
+  .config-split {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -830,6 +1032,16 @@ mark {
   }
 
   .works-row {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-suite,
+  .operations-panel {
+    padding: 18px;
+  }
+
+  .feature-grid,
+  .ops-grid {
     grid-template-columns: 1fr;
   }
 
