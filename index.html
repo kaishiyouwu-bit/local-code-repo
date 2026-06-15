@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>木趣智能家装 beta版</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">M</div>
+          <div>
+            <strong>木趣智能家装</strong>
+            <span>智能生成 · 高效出片</span>
+          </div>
+        </div>
+
+        <nav class="side-nav" aria-label="主导航">
+          <button class="nav-item active" data-target="client">创建视频</button>
+          <button class="nav-item">房间改造</button>
+          <button class="nav-item">产品植入</button>
+          <button class="nav-item">样板房视频</button>
+          <hr />
+          <button class="nav-item">我的作品</button>
+          <button class="nav-item">任务记录</button>
+          <button class="nav-item">素材库</button>
+          <button class="nav-item">我的套餐</button>
+          <button class="nav-item">账户设置</button>
+          <hr />
+          <button class="nav-item admin-jump" data-target="admin">管理后台</button>
+        </nav>
+
+        <div class="profile-card">
+          <div class="avatar"></div>
+          <div>
+            <strong>张设计师</strong>
+            <span>黑金会员 · 剩余 248 次</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <section id="client-view" class="view active-view">
+          <header class="topbar">
+            <div>
+              <h1>创建视频</h1>
+              <p>选择类型、上传素材，AI 为您生成高质量家装视频</p>
+            </div>
+            <div class="top-actions">
+              <button class="ghost-btn">使用教程</button>
+              <button class="bell-btn" aria-label="通知">12</button>
+            </div>
+          </header>
+
+          <section class="hero-grid" aria-label="创建入口">
+            <article class="create-card warm">
+              <div class="card-copy">
+                <h2>房间改造</h2>
+                <p>上传毛坯/旧房视频，生成装修后效果视频</p>
+                <button data-task="房间改造">立即创建</button>
+              </div>
+              <div class="before-after room">
+                <span>改造前</span>
+                <span>改造后</span>
+              </div>
+            </article>
+            <article class="create-card green">
+              <div class="card-copy">
+                <h2>产品植入</h2>
+                <p>上传产品图，生成产品在真实场景中的展示视频</p>
+                <button data-task="产品植入">立即创建</button>
+              </div>
+              <div class="scene-image sofa"></div>
+            </article>
+            <article class="create-card blue">
+              <div class="card-copy">
+                <h2>样板房视频</h2>
+                <p>上传房间素材和参考图，生成高端样板房展示视频</p>
+                <button data-task="样板房视频">立即创建</button>
+              </div>
+              <div class="scene-image bedroom"></div>
+            </article>
+          </section>
+
+          <section class="content-grid">
+            <div>
+              <div class="section-title">
+                <h2>我的作品</h2>
+                <a href="#works">查看全部</a>
+              </div>
+              <div class="works-row" id="works">
+                <article class="work-card">
+                  <div class="thumb living"><span>样板房视频</span><b>00:08</b></div>
+                  <h3>原木风客厅样板房</h3>
+                  <p>2026-06-15 10:30</p>
+                </article>
+                <article class="work-card">
+                  <div class="thumb sofa-dark"><span>产品植入</span><b>00:06</b></div>
+                  <h3>意式沙发展示</h3>
+                  <p>2026-06-15 09:42</p>
+                </article>
+                <article class="work-card">
+                  <div class="thumb room"><span>房间改造</span><b>00:10</b></div>
+                  <h3>旧房改造奶油风</h3>
+                  <p>2026-06-14 18:20</p>
+                </article>
+              </div>
+            </div>
+
+            <aside class="status-panel">
+              <h2>今日概览</h2>
+              <div class="metric"><span>剩余积分</span><strong>4,960</strong></div>
+              <div class="metric"><span>生成任务</span><strong>18</strong></div>
+              <div class="metric"><span>成功率</span><strong>96%</strong></div>
+            </aside>
+          </section>
+
+          <section class="builder-panel" id="builder">
+            <div class="steps">
+              <span class="step active">1 上传素材</span>
+              <span class="step">2 选择风格</span>
+              <span class="step">3 运镜设置</span>
+              <span class="step">4 确认生成</span>
+            </div>
+            <form class="builder-form">
+              <div class="form-header">
+                <h2>上传素材</h2>
+                <p>当前类型：<strong id="task-name">房间改造</strong></p>
+              </div>
+              <div class="upload-grid">
+                <label class="upload-card">
+                  <input type="file" accept="image/*,video/*" />
+                  <span>+</span>
+                  <strong>主素材</strong>
+                  <small>图片 20MB / 视频 200MB</small>
+                </label>
+                <label class="upload-card muted">
+                  <input type="file" accept="image/*,video/*" multiple />
+                  <span>+</span>
+                  <strong>参考图</strong>
+                  <small>装修案例、家具或软装参考</small>
+                </label>
+              </div>
+
+              <div class="field-grid">
+                <label>
+                  空间类型
+                  <select id="space">
+                    <option>客厅</option>
+                    <option>卧室</option>
+                    <option>厨房</option>
+                    <option>卫生间</option>
+                    <option>书房</option>
+                  </select>
+                </label>
+                <label>
+                  装修风格
+                  <select id="style">
+                    <option>原木风</option>
+                    <option>奶油风</option>
+                    <option>现代简约</option>
+                    <option>新中式</option>
+                    <option>意式轻奢</option>
+                  </select>
+                </label>
+                <label>
+                  运镜风格
+                  <select id="camera">
+                    <option>缓慢推进</option>
+                    <option>左右横移</option>
+                    <option>从门口进入</option>
+                    <option>局部特写</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="chips">
+                <span>视频比例</span>
+                <button type="button" class="chip active" data-ratio="16:9">16:9</button>
+                <button type="button" class="chip" data-ratio="9:16">9:16</button>
+                <button type="button" class="chip" data-ratio="1:1">1:1</button>
+              </div>
+
+              <div class="chips">
+                <span>视频时长</span>
+                <button type="button" class="chip" data-duration="5">5秒</button>
+                <button type="button" class="chip active" data-duration="8">8秒</button>
+                <button type="button" class="chip" data-duration="10">10秒</button>
+              </div>
+
+              <label class="remark">
+                备注要求
+                <textarea placeholder="例如：保留窗户位置，整体更温暖，适合小红书营销展示"></textarea>
+              </label>
+
+              <div class="estimate">
+                <div>
+                  <span>预计消耗</span>
+                  <strong><b id="cost">40</b> 积分</strong>
+                </div>
+                <button type="button" id="generate-btn">确认生成</button>
+              </div>
+            </form>
+          </section>
+        </section>
+
+        <section id="admin-view" class="view admin-view">
+          <aside class="admin-side">
+            <h2>管理后台</h2>
+            <button class="admin-tab active">首页</button>
+            <button class="admin-tab">提示词管理</button>
+            <button class="admin-tab">装修风格</button>
+            <button class="admin-tab">运镜风格</button>
+            <button class="admin-tab">任务记录</button>
+            <button class="admin-tab">用户管理</button>
+            <button class="admin-tab">系统设置</button>
+            <button class="back-client" data-target="client">返回前台</button>
+          </aside>
+          <div class="admin-main">
+            <header class="admin-header">
+              <div>
+                <h1>装修风格管理</h1>
+                <p>提示词、封面图、适用任务均由后台配置，前台只读取启用项。</p>
+              </div>
+              <button>+ 新增风格</button>
+            </header>
+
+            <div class="admin-stats">
+              <div><span>租户总数</span><strong>38</strong></div>
+              <div><span>今日生成</span><strong>126</strong></div>
+              <div><span>今日消耗积分</span><strong>8,420</strong></div>
+              <div><span>任务成功率</span><strong>96.8%</strong></div>
+            </div>
+
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>风格名称</th>
+                  <th>封面图</th>
+                  <th>描述</th>
+                  <th>状态</th>
+                  <th>排序</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>奶油风</td>
+                  <td><span class="mini-cover cream"></span></td>
+                  <td>温暖柔和，奶油色系，舒适治愈</td>
+                  <td><mark>启用</mark></td>
+                  <td>1</td>
+                  <td>编辑　删除</td>
+                </tr>
+                <tr>
+                  <td>原木风</td>
+                  <td><span class="mini-cover wood"></span></td>
+                  <td>自然原木，简约温暖，回归自然</td>
+                  <td><mark>启用</mark></td>
+                  <td>2</td>
+                  <td>编辑　删除</td>
+                </tr>
+                <tr>
+                  <td>现代简约</td>
+                  <td><span class="mini-cover modern"></span></td>
+                  <td>简洁大方，线条清晰，时尚现代</td>
+                  <td><mark>启用</mark></td>
+                  <td>3</td>
+                  <td>编辑　删除</td>
+                </tr>
+                <tr>
+                  <td>新中式</td>
+                  <td><span class="mini-cover chinese"></span></td>
+                  <td>中式元素，现代演绎，典雅大气</td>
+                  <td><mark>启用</mark></td>
+                  <td>4</td>
+                  <td>编辑　删除</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+
+      <nav class="mobile-nav" aria-label="移动端导航">
+        <button>首页</button>
+        <button class="active">创建</button>
+        <button>作品</button>
+        <button>我的</button>
+      </nav>
+    </div>
+
+    <div class="toast" id="toast">任务已创建：积分已预扣，正在排队生成</div>
+    <script src="./script.js"></script>
+  </body>
+</html>
