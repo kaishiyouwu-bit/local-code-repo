@@ -1,0 +1,10 @@
+{
+  "name": "muqu-ai-home-beta",
+  "version": "0.2.0",
+  "private": true,
+  "description": "木趣智能家装 beta版本地 MVP",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check script.js"
+  }
+}

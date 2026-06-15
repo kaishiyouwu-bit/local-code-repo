@@ -7,6 +7,32 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <section class="auth-screen" id="auth-screen">
+      <div class="auth-card">
+        <div class="brand auth-brand">
+          <div class="brand-mark">M</div>
+          <div>
+            <strong>木趣智能家装</strong>
+            <span>本地 MVP 登录</span>
+          </div>
+        </div>
+        <h1>登录工作台</h1>
+        <p>使用演示账号进入本地可用版本，体验租户、积分、任务和作品流程。</p>
+        <form id="login-form" class="login-form">
+          <label>
+            账号
+            <input id="login-account" type="text" value="demo@muqu.local" autocomplete="username" />
+          </label>
+          <label>
+            密码
+            <input id="login-password" type="password" value="123456" autocomplete="current-password" />
+          </label>
+          <button type="submit">登录</button>
+          <small id="login-error"></small>
+        </form>
+      </div>
+    </section>
+
     <div class="app-shell">
       <aside class="sidebar">
         <div class="brand">
@@ -35,8 +61,8 @@
         <div class="profile-card">
           <div class="avatar"></div>
           <div>
-            <strong>张设计师</strong>
-            <span>黑金会员 · 剩余 248 次</span>
+            <strong id="profile-name">张设计师</strong>
+            <span id="profile-meta">黑金会员 · 剩余 248 次</span>
           </div>
         </div>
       </aside>
@@ -111,9 +137,9 @@
 
             <aside class="status-panel">
               <h2>今日概览</h2>
-              <div class="metric"><span>剩余积分</span><strong>4,960</strong></div>
-              <div class="metric"><span>生成任务</span><strong>18</strong></div>
-              <div class="metric"><span>成功率</span><strong>96%</strong></div>
+              <div class="metric"><span>剩余积分</span><strong id="metric-credits">4,960</strong></div>
+              <div class="metric"><span>生成任务</span><strong id="metric-tasks">18</strong></div>
+              <div class="metric"><span>成功率</span><strong id="metric-success">96%</strong></div>
             </aside>
           </section>
 
@@ -174,20 +200,20 @@
             <div class="ops-grid">
               <article class="ops-card membership">
                 <p>当前套餐</p>
-                <h3>黑金会员</h3>
-                <span>5 个席位 · 2026-12-31 到期</span>
+                <h3 id="plan-name">黑金会员</h3>
+                <span id="plan-meta">5 个席位 · 2026-12-31 到期</span>
                 <button>续费 / 升级</button>
               </article>
               <article class="ops-card credits">
                 <p>积分账户</p>
-                <h3>4,960</h3>
-                <span>冻结 46 · 今日消耗 420</span>
+                <h3 id="account-balance">4,960</h3>
+                <span id="account-meta">冻结 46 · 今日消耗 420</span>
                 <button>查看明细</button>
               </article>
               <article class="ops-card members">
                 <p>成员席位</p>
-                <h3>3 / 5</h3>
-                <span>管理员 1 · 创作者 2 · 查看者 0</span>
+                <h3 id="seat-count">3 / 5</h3>
+                <span id="seat-meta">管理员 1 · 创作者 2 · 查看者 0</span>
                 <button>管理成员</button>
               </article>
             </div>
@@ -202,7 +228,7 @@
                     <th>状态</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="transactions-body">
                   <tr>
                     <td>13:20</td>
                     <td>视频生成</td>
@@ -243,15 +269,15 @@
               </div>
               <div class="upload-grid">
                 <label class="upload-card">
-                  <input type="file" accept="image/*,video/*" />
+                  <input id="main-file" type="file" accept="image/*,video/*" />
                   <span>+</span>
-                  <strong>主素材</strong>
+                  <strong id="main-file-label">主素材</strong>
                   <small>图片 20MB / 视频 200MB</small>
                 </label>
                 <label class="upload-card muted">
-                  <input type="file" accept="image/*,video/*" multiple />
+                  <input id="reference-file" type="file" accept="image/*,video/*" multiple />
                   <span>+</span>
-                  <strong>参考图</strong>
+                  <strong id="reference-file-label">参考图</strong>
                   <small>装修案例、家具或软装参考</small>
                 </label>
               </div>

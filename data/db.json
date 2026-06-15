@@ -1,0 +1,172 @@
+{
+  "tenants": [
+    {
+      "id": "tenant_muqu_demo",
+      "name": "木趣演示家装公司",
+      "logoUrl": "",
+      "status": "active",
+      "planId": "plan_black",
+      "membershipExpireAt": "2026-12-31",
+      "seatLimit": 5
+    }
+  ],
+  "users": [
+    {
+      "id": "user_admin",
+      "tenantId": "tenant_muqu_demo",
+      "name": "张设计师",
+      "phone": "13800000000",
+      "email": "demo@muqu.local",
+      "password": "123456",
+      "role": "admin",
+      "status": "active"
+    },
+    {
+      "id": "user_creator",
+      "tenantId": "tenant_muqu_demo",
+      "name": "李运营",
+      "phone": "13900000000",
+      "email": "creator@muqu.local",
+      "password": "123456",
+      "role": "creator",
+      "status": "active"
+    }
+  ],
+  "plans": [
+    {
+      "id": "plan_platinum",
+      "name": "白金会员",
+      "level": "platinum",
+      "defaultSeats": 2,
+      "grantedCredits": 1200,
+      "allowUpscale": true
+    },
+    {
+      "id": "plan_black",
+      "name": "黑金会员",
+      "level": "black",
+      "defaultSeats": 5,
+      "grantedCredits": 5000,
+      "allowUpscale": true
+    },
+    {
+      "id": "plan_enterprise",
+      "name": "企业定制版",
+      "level": "enterprise",
+      "defaultSeats": 10,
+      "grantedCredits": 20000,
+      "allowUpscale": true
+    }
+  ],
+  "creditAccounts": [
+    {
+      "tenantId": "tenant_muqu_demo",
+      "balance": 4960,
+      "frozen": 0,
+      "totalConsumed": 0
+    }
+  ],
+  "creditTransactions": [],
+  "materials": [],
+  "tasks": [],
+  "works": [
+    {
+      "id": "work_seed_1",
+      "tenantId": "tenant_muqu_demo",
+      "userId": "user_admin",
+      "taskId": "seed_task_1",
+      "title": "原木风客厅样板房",
+      "taskType": "样板房视频",
+      "style": "原木风",
+      "space": "客厅",
+      "camera": "缓慢推进",
+      "aspectRatio": "16:9",
+      "duration": 8,
+      "creditCost": 60,
+      "status": "completed",
+      "videoUrl": "#demo-video",
+      "createdAt": "2026-06-15T10:30:00.000Z"
+    },
+    {
+      "id": "work_seed_2",
+      "tenantId": "tenant_muqu_demo",
+      "userId": "user_creator",
+      "taskId": "seed_task_2",
+      "title": "意式沙发展示",
+      "taskType": "产品植入",
+      "style": "意式轻奢",
+      "space": "客厅",
+      "camera": "局部特写",
+      "aspectRatio": "9:16",
+      "duration": 6,
+      "creditCost": 40,
+      "status": "completed",
+      "videoUrl": "#demo-video",
+      "createdAt": "2026-06-15T09:42:00.000Z"
+    }
+  ],
+  "pricingRules": [
+    {
+      "taskType": "房间改造",
+      "baseCost": 40
+    },
+    {
+      "taskType": "产品植入",
+      "baseCost": 36
+    },
+    {
+      "taskType": "样板房视频",
+      "baseCost": 60
+    }
+  ],
+  "promptTemplates": {
+    "taskTypes": [
+      "房间改造",
+      "产品植入",
+      "样板房视频"
+    ],
+    "spaces": [
+      "客厅",
+      "卧室",
+      "厨房",
+      "卫生间",
+      "书房"
+    ],
+    "styles": [
+      "原木风",
+      "奶油风",
+      "现代简约",
+      "新中式",
+      "意式轻奢"
+    ],
+    "cameraStyles": [
+      "缓慢推进",
+      "左右横移",
+      "从门口进入",
+      "局部特写"
+    ]
+  },
+  "providers": [
+    {
+      "id": "provider_mock",
+      "providerName": "MockVideoProvider",
+      "modelName": "local-simulated-video",
+      "status": "active",
+      "timeoutSeconds": 60,
+      "maxRetryCount": 2
+    }
+  ],
+  "upscalePlugins": [
+    {
+      "id": "upscale_mock",
+      "pluginName": "MockUpscale",
+      "supportedOutputQuality": [
+        "1080P",
+        "2K",
+        "4K"
+      ],
+      "creditCost": 30,
+      "status": "active"
+    }
+  ]
+}

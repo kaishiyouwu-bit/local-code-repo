@@ -30,13 +30,79 @@ body {
 
 button,
 select,
-textarea {
+textarea,
+input {
   font: inherit;
 }
 
 button {
   border: 0;
   cursor: pointer;
+}
+
+.auth-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 25% 20%, rgba(217, 183, 147, 0.35), transparent 28%),
+    linear-gradient(135deg, #f8f4ee, #edf3f0);
+}
+
+.auth-screen.hidden {
+  display: none;
+}
+
+.auth-card {
+  width: min(460px, 100%);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: var(--shadow);
+  padding: 34px;
+}
+
+.auth-brand {
+  margin-bottom: 24px;
+}
+
+.auth-card h1 {
+  font-size: 28px;
+}
+
+.auth-card p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-top: 10px;
+}
+
+.login-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.login-form input {
+  border: 1px solid #dfe2e2;
+  border-radius: 13px;
+  background: #fff;
+  padding: 13px 14px;
+  outline: none;
+}
+
+.login-form button {
+  border-radius: 14px;
+  background: var(--dark);
+  color: #fff;
+  padding: 14px 18px;
+  font-weight: 900;
+}
+
+.login-form small {
+  min-height: 18px;
+  color: #b33a2b;
 }
 
 .app-shell {
